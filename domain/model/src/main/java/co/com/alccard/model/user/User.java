@@ -7,7 +7,7 @@ import lombok.*;
 @Builder(toBuilder = true)
 @Data
 public class User {
-    private Integer id;
+    private Long id;
     private String name;
     private String surname;
     private String email;

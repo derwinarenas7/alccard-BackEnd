@@ -2,21 +2,23 @@ package co.com.alccard.jpa.entity;
 
 import jakarta.persistence.*;
 import lombok.AllArgsConstructor;
+import lombok.Builder;
 import lombok.Data;
 import lombok.NoArgsConstructor;
 
 import java.io.Serializable;
 
+@Data
+@Builder(toBuilder=true)
+@Entity
 @NoArgsConstructor
 @AllArgsConstructor
-@Data
-@Entity
-@Table(name = "USER", schema = "alccard")
+@Table(name = "USER")
 public class UserEntity implements Serializable {
     @Id
     @GeneratedValue(strategy = GenerationType.AUTO)
     @Column(name = "ID")
-    private Integer id;
+    private Long id;
     @Column(name = "NAME")
     private String name;
     @Column(name = "SURNAME")

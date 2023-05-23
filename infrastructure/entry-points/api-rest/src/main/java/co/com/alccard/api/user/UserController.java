@@ -18,17 +18,15 @@ public class UserController {
     public ResponseEntity<User> saveUser(@RequestBody User user) {
         User usuario = userUseCase.saveUser(user);
 
-        if (usuario != null) {
+        if (usuario.getId() != null) {
             return new ResponseEntity<>(usuario, HttpStatus.OK);
         }else {
             return new ResponseEntity<>(usuario, HttpStatus.INTERNAL_SERVER_ERROR);
         }
     }
 
-
-
     @GetMapping("get-user-by-id")
-    public ResponseEntity<User> findById(@RequestParam("id") int id) {
+    public ResponseEntity<User> findById(@RequestParam("id") Long id) {
         User user = userUseCase.getUserById(id);
         if (user.getId() != 0) {
             return new ResponseEntity<>(user, HttpStatus.OK);
@@ -36,9 +34,5 @@ public class UserController {
             return new ResponseEntity<>(user, HttpStatus.NOT_FOUND);
         }
     }
-
-
-
-
 
 }

@@ -13,7 +13,7 @@ spring:
     include: null
   spring:
     datasource:
-      url: "jdbc:postgresql://localhost:5432/alccard"
+      url: "jdbc:postgresql://localhost:5432/postgres"
       username: "postgres"
       password: 12345
       driver-class-name: "org.postgresql.Driver"

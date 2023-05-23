@@ -63,7 +63,6 @@ public abstract class AdapterOperations<E, D, I, R extends CrudRepository<D, I> 
         return toList(repository.findAll( Example.of(toData(entity))));
     }
 
-
     public List<E> findAll(){
         return toList(repository.findAll());
     }

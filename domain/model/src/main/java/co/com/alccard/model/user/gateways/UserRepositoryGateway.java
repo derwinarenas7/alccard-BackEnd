@@ -4,10 +4,10 @@ import co.com.alccard.model.user.User;
 
 import java.util.List;
 
-public interface UserRepository {
+public interface UserRepositoryGateway {
     User save(User user);
-    User findById(Integer id);
+    User findById(Long id);
     List<User> getAll();
     void update(User user);
-    void delete(Integer id);
+    void delete(Long id);
 }
