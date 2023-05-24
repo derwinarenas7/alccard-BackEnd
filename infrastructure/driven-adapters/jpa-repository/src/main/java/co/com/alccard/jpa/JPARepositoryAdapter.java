@@ -1,20 +1,45 @@
+/*
 package co.com.alccard.jpa;
 
+import co.com.alccard.jpa.entity.UserEntity;
 import co.com.alccard.jpa.helper.AdapterOperations;
+import co.com.alccard.model.user.User;
+import co.com.alccard.model.user.gateways.UserRepositoryGateway;
 import org.reactivecommons.utils.ObjectMapper;
 import org.springframework.stereotype.Repository;
 
+import java.util.List;
 @Repository
-public class JPARepositoryAdapter extends AdapterOperations<Object/* change for domain model */, Object/* change for adapter model */, String, JPARepository>
-// implements ModelRepository from domain
-{
+public class JPARepositoryAdapter extends AdapterOperations<User, UserEntity, Long, JPARepository> implements UserRepositoryGateway {
 
     public JPARepositoryAdapter(JPARepository repository, ObjectMapper mapper) {
-        /**
-         *  Could be use mapper.mapBuilder if your domain model implement builder pattern
-         *  super(repository, mapper, d -> mapper.mapBuilder(d,ObjectModel.ObjectModelBuilder.class).build());
-         *  Or using mapper.map with the class of the object model
-         */
-        super(repository, mapper, d -> mapper.map(d, Object.class/* change for domain model */));
+        super(repository, mapper, d -> mapper.mapBuilder(d,User.UserBuilder.class).build());
+    }
+
+    @Override
+    public User save(User user) {
+        var userData = toData(user);
+        return toEntity(saveData(userData));
+    }
+
+    @Override
+    public User findById(Long id) {
+        return null;
+    }
+
+    @Override
+    public List<User> getAll() {
+        return null;
+    }
+
+    @Override
+    public void update(User user) {
+
+    }
+
+    @Override
+    public void delete(Long id) {
+
     }
 }
+*/

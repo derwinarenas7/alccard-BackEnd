@@ -1,21 +1,21 @@
 package co.com.alccard.jpa.adapter;
 
 import co.com.alccard.jpa.entity.UserEntity;
-import co.com.alccard.jpa.helper.UserMapper;
+import co.com.alccard.jpa.helper.AdapterOperations;
 import co.com.alccard.jpa.repository.UserEntityJpaRepository;
 import co.com.alccard.model.user.User;
 import co.com.alccard.model.user.gateways.UserRepositoryGateway;
-import lombok.RequiredArgsConstructor;
+import org.reactivecommons.utils.ObjectMapper;
 import org.springframework.stereotype.Repository;
 
 import java.util.List;
 
 @Repository
-@RequiredArgsConstructor
-public class UserEntityRepositoryImpl implements UserRepositoryGateway {
+public class UserEntityRepositoryImpl extends AdapterOperations<User, UserEntity, Long, UserEntityJpaRepository> implements UserRepositoryGateway {
 
-    private final UserMapper userMapper;
-    private final UserEntityJpaRepository userEntityJpaRepository;
+    public UserEntityRepositoryImpl(UserEntityJpaRepository repository, ObjectMapper mapper) {
+        super(repository, mapper, d -> mapper.mapBuilder(d, User.UserBuilder.class).build());
+    }
 
     /**
      * @param user
@@ -23,8 +23,8 @@ public class UserEntityRepositoryImpl implements UserRepositoryGateway {
      */
     @Override
     public User save(User user) {
-        UserEntity userData = userMapper.toEntity(user);
-        return userMapper.toUser(userEntityJpaRepository.save(userData));
+        var userData = toData(user);
+        return null;
     }
 
 

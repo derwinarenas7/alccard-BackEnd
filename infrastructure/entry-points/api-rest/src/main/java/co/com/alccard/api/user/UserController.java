@@ -16,8 +16,8 @@ public class UserController {
 
     @PostMapping("save-user")
     public ResponseEntity<User> saveUser(@RequestBody User user) {
-        User usuario = userUseCase.saveUser(user);
 
+        User usuario = userUseCase.saveUser(user);
         if (usuario.getId() != null) {
             return new ResponseEntity<>(usuario, HttpStatus.OK);
         }else {
@@ -27,6 +27,7 @@ public class UserController {
 
     @GetMapping("get-user-by-id")
     public ResponseEntity<User> findById(@RequestParam("id") Long id) {
+
         User user = userUseCase.getUserById(id);
         if (user.getId() != 0) {
             return new ResponseEntity<>(user, HttpStatus.OK);
