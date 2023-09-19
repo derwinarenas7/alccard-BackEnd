@@ -13,7 +13,7 @@ spring:
     include: null
   spring:
     datasource:
-      url: "jdbc:postgresql://localhost:5432/postgres"
+      url: "jdbc:postgresql://localhost:5432/alccard"
       username: "postgres"
       password: 12345
       driver-class-name: "org.postgresql.Driver"
@@ -25,13 +25,7 @@ spring:
           dialect: "org.hibernate.dialect.PostgreSQLDialect"
           format_sql: true
       show-sql: true
-  datasource:
-    url: "jdbc:h2:mem:test"
-    username: "sa"
-    password: "pass"
-    driverClassName: "org.h2.Driver"
-  jpa:
-    databasePlatform: "org.hibernate.dialect.H2Dialect"
+
 management:
   endpoints:
     web:

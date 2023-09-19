@@ -1,4 +1,4 @@
-package co.com.alccard.model.user.gateways;
+package co.com.alccard.model.user.gateway;
 
 import co.com.alccard.model.user.User;
 

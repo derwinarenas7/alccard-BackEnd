@@ -1,7 +1,7 @@
 package co.com.alccard.usecase.user;
 
 import co.com.alccard.model.user.User;
-import co.com.alccard.model.user.gateways.UserRepositoryGateway;
+import co.com.alccard.model.user.gateway.UserRepositoryGateway;
 import lombok.RequiredArgsConstructor;
 
 import java.util.ArrayList;

@@ -4,7 +4,7 @@ package co.com.alccard.jpa;
 import co.com.alccard.jpa.entity.UserEntity;
 import co.com.alccard.jpa.helper.AdapterOperations;
 import co.com.alccard.model.user.User;
-import co.com.alccard.model.user.gateways.UserRepositoryGateway;
+import co.com.alccard.model.user.gateway.UserRepositoryGateway;
 import org.reactivecommons.utils.ObjectMapper;
 import org.springframework.stereotype.Repository;
 

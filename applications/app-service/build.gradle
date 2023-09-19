@@ -3,11 +3,12 @@ apply plugin: 'org.springframework.boot'
 dependencies {
 	implementation project( ':alccardhelper')
 	implementation project( ':api-rest')
-	implementation 'org.reactivecommons.utils:object-mapper:0.1.0'
 	implementation project( ':jpa-repository')
     implementation project(':model')
     implementation project(':usecase')
     implementation 'org.springframework.boot:spring-boot-starter'
+    implementation 'org.reactivecommons.utils:object-mapper:0.1.0'
+    implementation 'org.flywaydb:flyway-core'
     runtimeOnly('org.springframework.boot:spring-boot-devtools')
 }
 

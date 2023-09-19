@@ -1,6 +1,6 @@
 package co.com.alccard.config;
 
-import co.com.alccard.model.user.gateways.UserRepositoryGateway;
+import co.com.alccard.model.user.gateway.UserRepositoryGateway;
 import co.com.alccard.usecase.user.UserUseCase;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;

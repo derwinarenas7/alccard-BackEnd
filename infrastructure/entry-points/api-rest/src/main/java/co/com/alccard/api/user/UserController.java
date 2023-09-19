@@ -14,11 +14,13 @@ public class UserController {
 
     private final UserUseCase userUseCase;
 
-    @PostMapping("save-user")
+    @PostMapping(path = "/save-user")
     public ResponseEntity<User> saveUser(@RequestBody User user) {
 
-        User usuario = userUseCase.saveUser(user);
-        if (usuario.getId() != null) {
+        User usuario = null;
+
+        if (user.getId() != null) {
+            usuario = userUseCase.saveUser(user);
             return new ResponseEntity<>(usuario, HttpStatus.OK);
         }else {
             return new ResponseEntity<>(usuario, HttpStatus.INTERNAL_SERVER_ERROR);
