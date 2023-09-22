@@ -4,7 +4,6 @@ import co.com.alccard.jpa.entity.UserEntity;
 import co.com.alccard.jpa.repository.UserRepository;
 import co.com.alccard.model.user.User;
 import co.com.alccard.model.user.gateway.UserRepositoryGateway;
-import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Repository;
 
 import java.util.List;
@@ -14,7 +13,7 @@ public class UserEntityJPAImpl implements UserRepositoryGateway {
 
     private UserRepository userRepository;
 
-    @Autowired
+
     UserEntityJPAImpl(UserRepository userRepository) {
         this.userRepository = userRepository;
     }

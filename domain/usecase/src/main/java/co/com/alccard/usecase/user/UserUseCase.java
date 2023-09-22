@@ -4,7 +4,6 @@ import co.com.alccard.model.user.User;
 import co.com.alccard.model.user.gateway.UserRepositoryGateway;
 import lombok.RequiredArgsConstructor;
 
-import java.util.ArrayList;
 import java.util.List;
 
 
@@ -35,7 +34,7 @@ public class UserUseCase {
      * @return
      */
     public List<User> getAllUsers() {
-        return new ArrayList<>();
+        return userRepositoryGateway.getAll();
     }
 
     /**

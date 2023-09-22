@@ -1,18 +1,15 @@
 package co.com.alccard.jpa.entity;
 
 import jakarta.persistence.*;
-import lombok.AllArgsConstructor;
-import lombok.Builder;
-import lombok.Data;
-import lombok.NoArgsConstructor;
+import lombok.*;
 
 import java.io.Serializable;
 
-@Data
-@Builder(toBuilder=true)
-@Entity
+@Getter
 @NoArgsConstructor
 @AllArgsConstructor
+@Builder(toBuilder=true)
+@Entity
 @Table(name = "USER", schema = "ALCCARD")
 public class UserEntity implements Serializable {
     @Id
